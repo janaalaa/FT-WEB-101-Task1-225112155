@@ -1,0 +1,465 @@
+/* Apply to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Color variables */
+:root {
+    /* Main Colors */
+    --bg-color: #F0F4F8;
+    --text-color: #142238;
+    --card-color: #FFFFFF;
+
+    /* Blue Palette */
+    --primary-color: #315B85;
+    --secondary-color: #7293B5;
+    --accent-color: #B4CBE0;
+
+    /* Navigation */
+    --nav-color: rgba(255, 255, 255, 0.85);
+
+    /* Effects */
+    --shadow: 0 10px 35px rgba(20, 34, 56, 0.08);
+}
+
+/* Body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    transition: background-color 0.4s ease,
+                color 0.4s ease;
+}
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--nav-color);
+}
+
+/* Navigation Links */
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 20px;
+    font-weight: bold;
+}
+/* Hero Section */
+
+#home {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10%;
+    gap: 50px;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(82, 120, 160, 0.15),
+            transparent 40%
+        );
+}
+
+/* Hero Text */
+
+.hero-content {
+    flex: 1;
+    animation: slideLeft 1s ease;
+}
+
+.hero-greeting {
+    letter-spacing: 5px;
+    font-size: 13px;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.hero-content h1 {
+    font-size: clamp(55px, 8vw, 95px);
+    margin: 15px 0;
+    line-height: 1.1;
+}
+
+.hero-content h1 span {
+    color: var(--primary-color);
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    font-weight: normal;
+    color: var(--secondary-color);
+}
+
+.hero-description {
+    max-width: 500px;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.hero-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.hero-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-4px);
+}
+
+/* Hero Image */
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 160px 160px 30px 30px;
+    border: 3px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+/* Entrance Animation */
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* About Section */
+
+#about {
+    padding: 100px 10%;
+}
+
+/* Section Heading */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-label {
+    color: var(--secondary-color);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.section-heading h2 span {
+    color: var(--primary-color);
+}
+
+.section-description {
+    color: var(--secondary-color);
+    line-height: 1.7;
+}
+
+/* Cards Container */
+
+.cards-container {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Individual Cards */
+
+.profile-card {
+    flex: 1;
+    position: relative;
+    padding: 35px 28px;
+    border-radius: 18px;
+
+    background-color: var(--card-color);
+
+    border: 1px solid rgba(114, 147, 181, 0.2);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+/* Card Number */
+
+.card-number {
+    font-size: 13px;
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+}
+
+/* Card Icon */
+
+.card-icon {
+    display: block;
+    font-size: 35px;
+    color: var(--primary-color);
+    margin: 30px 0 20px;
+}
+
+/* Card Title */
+
+.profile-card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+/* Card Description */
+
+.profile-card p {
+    line-height: 1.8;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Card Tag */
+
+.card-tag {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 11px;
+    color: var(--secondary-color);
+    letter-spacing: 0.5px;
+}
+
+/* Hover Animation */
+
+.profile-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 20px 40px rgba(30, 60, 100, 0.15);
+}
+
+/* Featured Card */
+
+.featured-card {
+    background: linear-gradient(
+        145deg,
+        var(--card-color),
+        rgba(82, 120, 160, 0.12)
+    );
+}
+/* Contact Section */
+
+#contact {
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+/* Contact Content */
+
+.contact-content {
+    flex: 1;
+}
+
+.contact-content h2 {
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.contact-content h2 span {
+    color: var(--primary-color);
+}
+
+.contact-description {
+    max-width: 430px;
+    line-height: 1.9;
+    color: var(--secondary-color);
+}
+
+.contact-decoration {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.contact-decoration span {
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.contact-decoration p {
+    font-size: 13px;
+    color: var(--secondary-color);
+}
+
+/* Contact Form Container */
+
+.contact-form-container {
+    flex: 1;
+    max-width: 480px;
+    background-color: var(--card-color);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(114, 147, 181, 0.2);
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-form > p {
+    color: var(--secondary-color);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Input Groups */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(114, 147, 181, 0.4);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(49, 91, 133, 0.12);
+}
+
+/* Contact Button */
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+body.dark {
+    --bg-color: #080D17;
+    --text-color: #F1F5FA;
+    --card-color: #111C2D;
+
+    --primary-color: #668DB8;
+    --secondary-color: #8BAACB;
+    --accent-color: #C4D8EA;
+
+    --nav-color: rgba(13, 22, 37, 0.9);
+
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+/* Smooth Transitions */
+
+a, button, input, div {
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    /* Navigation */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    /* Hero Section */
+    #home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 7%;
+        gap: 35px;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 310px;
+    }
+
+    /* About Cards */
+    #about {
+        padding: 70px 7%;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+        /* Contact Section */
+    #contact {
+        flex-direction: column;
+        padding: 70px 7%;
+        gap: 40px;
+    }
+
+    .contact-content,
+    .contact-form-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-form-container {
+        padding: 25px;
+    }
+
+}
